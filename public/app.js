@@ -3,6 +3,9 @@ var app = angular.module('FlashCards',[]);
 app.controller('FlashCardController',function($scope){
 	$scope.answered=false;
 	$scope.answerQuestion = function(answer){
+		if ($scope.answered) {
+			return;
+		}
 		$scope.answered = true;
 		$scope.answeredCorrectly = answer;
 	};
